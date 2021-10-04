@@ -23,7 +23,7 @@ const Services = () => {
       >
       {
         courses?.length === 0 ? 
-          <p style={{padding:'30px 0 320px', color: '#1976d2'}}>Loading...</p>
+          <p style={{paddingTop:'30px', color: '#1976d2'}}>Loading...</p>
         : 
         courses?.map((course) => (
             <AllCourse course={course} key={course.id}></AllCourse>
