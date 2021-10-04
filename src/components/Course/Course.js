@@ -1,15 +1,20 @@
 import React from "react";
-import { useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { Button } from "@mui/material";
 
 const Course = (props) => {
-  const { title, mentor_name, course_img, serial } = props.course;
+  const { title, mentor_name, course_img, id } = props.course;
+  const history = useHistory();
+
+  const handleCourseClick = () => {
+    history.push(`/course/${id}`);
+  };
+
   return (
     <div>
       <Card
@@ -32,9 +37,9 @@ const Course = (props) => {
               <h5>Mentor: {mentor_name}</h5>
             </Typography>
             <br />
-            <Link to="/course" style={{ textDecoration: "none" }}>
-              <Button variant="contained">Course Details</Button>
-            </Link>
+            <Button onClick={handleCourseClick} variant="contained">
+              Course Details
+            </Button>
           </CardContent>
         </Box>
         <CardMedia

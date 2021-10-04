@@ -19,8 +19,11 @@ const Home = () => {
                     <div>
                         <br />
                         <h2>Total Course: {courses?.length}</h2>
-                        {
-                            courses?.slice(0, 3).map(course => <Course course={course} key={course.serial}></Course>)
+                        {   
+                            courses?.length === 0 ?
+                            <p>Loading...</p>
+                            :
+                            courses?.slice(0, 3).map(course => <Course course={course} key={course.id}></Course>)
                         }
                     </div>
                     <br />
@@ -31,7 +34,7 @@ const Home = () => {
                     </div>
                 </div>
                 <div>
-                    <p>Catagory</p>
+                    <p>Services</p>
                 </div>
             </div>
        </Container>
