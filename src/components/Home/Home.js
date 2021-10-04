@@ -31,11 +31,9 @@ const Home = () => {
               <h2 style={{marginTop: "15px"}}>Total Course Available: {courses?.length}</h2>
               {
                 courses?.length === 0 ? 
-                <p style={{paddingTop:'30px', textAlign:'center', color: '#1976d2'}}>Loading...</p>
+                <h2 style={{marginTop:'30px', textAlign:'center', color: '#1976d2'}}>Loading...</h2>
                 :
-                courses?.slice(0, 4).map((course) => (
-                    <Course course={course} key={course.id}></Course>
-                  ))
+                courses?.slice(0, 4).map(course => <Course course={course} key={course.id}></Course>)
               }
             </div>
             <br />

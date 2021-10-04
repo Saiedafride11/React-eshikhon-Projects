@@ -23,11 +23,9 @@ const Services = () => {
       >
       {
         courses?.length === 0 ? 
-          <p style={{paddingTop:'30px', color: '#1976d2'}}>Loading...</p>
+          <h2 style={{marginTop:'30px', color: '#1976d2'}}>Loading...</h2>
         : 
-        courses?.map((course) => (
-            <AllCourse course={course} key={course.id}></AllCourse>
-        ))
+        courses?.map(course => <AllCourse course={course} key={course.id}></AllCourse>)
       }
       </div>
     </Container>
