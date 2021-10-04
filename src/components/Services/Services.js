@@ -13,7 +13,7 @@ const Services = () => {
   }, []);
   return (
     <Container style={{paddingTop:'80px'}}>
-      <h2 style={{paddingTop:'15px'}}>Total Course: {courses?.length}</h2>
+      <h2 style={{paddingTop:'15px'}}>Total Course Available: {courses?.length}</h2>
       <div
         style={{
           display: "grid",
