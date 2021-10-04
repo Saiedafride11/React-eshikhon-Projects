@@ -79,6 +79,13 @@ const BestService = () => {
           >
             <ListItemText primary="Nice and Cool Environment" />
           </ListItem>
+          <ListItem
+            button
+            selected={selectedIndex === 10}
+            onClick={(event) => handleListItemClick(event, 10)}
+          >
+            <ListItemText primary="Beginner Friendly learning system" />
+          </ListItem>
         </List>
       </div>
     </div>
