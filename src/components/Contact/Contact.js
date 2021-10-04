@@ -8,7 +8,7 @@ const Contact = () => {
       <h2 className="text-center py-1">Contact Us</h2>
       <form className="row g-3 p-5">
         <div className="col-md-6">
-          <label for="fName" className="form-label">
+          <label htmlFor="fName" className="form-label">
             First Name
           </label>
           <input
@@ -19,7 +19,7 @@ const Contact = () => {
           />
         </div>
         <div className="col-md-6">
-          <label for="lName" className="form-label">
+          <label htmlFor="lName" className="form-label">
             Last Name
           </label>
           <input
@@ -30,7 +30,7 @@ const Contact = () => {
           />
         </div>
         <div className="col-md-6">
-          <label for="email" className="form-label">
+          <label htmlFor="email" className="form-label">
             Email
           </label>
           <input
@@ -41,7 +41,7 @@ const Contact = () => {
           />
         </div>
         <div className="col-md-6">
-          <label for="phone" className="form-label">
+          <label htmlFor="phone" className="form-label">
             Phone
           </label>
           <input
@@ -52,7 +52,7 @@ const Contact = () => {
           />
         </div>
         <div className="col-md-6">
-          <label for="address" className="form-label">
+          <label htmlFor="address" className="form-label">
             Address
           </label>
           <input
@@ -63,11 +63,11 @@ const Contact = () => {
           />
         </div>
         <div className="col-md-4">
-          <label for="inputState" className="form-label">
+          <label htmlFor="inputState" className="form-label">
             State
           </label>
           <select id="inputState" className="form-select">
-            <option selected>Choose...</option>
+            <option defaultValue>Choose...</option>
             <option>Dhaka</option>
             <option>Mymensingh</option>
             <option>Feni</option>
@@ -76,7 +76,7 @@ const Contact = () => {
           </select>
         </div>
         <div className="col-md-2">
-          <label for="inputZip" className="form-label">
+          <label htmlFor="inputZip" className="form-label">
             Zip
           </label>
           <input
@@ -93,7 +93,7 @@ const Contact = () => {
               type="checkbox"
               id="gridCheck"
             />
-            <label className="form-check-label" for="gridCheck">
+            <label className="form-check-label" htmlFor="gridCheck">
               Check me out
             </label>
           </div>

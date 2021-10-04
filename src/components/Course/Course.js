@@ -6,9 +6,10 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { useHistory } from "react-router-dom";
 import { Button } from "@mui/material";
+import StarIcon from "@mui/icons-material/Star";
 
 const Course = (props) => {
-  const { title, mentor_name, fee, course_img, id } = props.course;
+  const { title, mentor_name, fee, course_img, ratting, id } = props.course;
   const history = useHistory();
 
   const handleCourseClick = () => {
@@ -35,8 +36,15 @@ const Course = (props) => {
               component="div"
             >
               <div>
-                <p className="mb-0"><strong>Mentor:</strong> <small>{mentor_name}</small></p>
-                <p><strong>Course Fee:</strong> <small>${fee}</small></p>
+                <p className="mb-0">
+                  <strong>Mentor:</strong> <small>{mentor_name}</small>
+                </p>
+                <div className="d-flex">
+                  <p>
+                    <strong>Course Fee:</strong> <small>${fee}</small>
+                  </p>
+                  <StarIcon style={{marginLeft: '10px', color:'#1976d2'}}></StarIcon><p>{ratting}</p>
+                </div>
               </div>
             </Typography>
             <Button onClick={handleCourseClick} variant="contained">
