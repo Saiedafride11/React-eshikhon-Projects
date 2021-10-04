@@ -11,10 +11,7 @@ const Banner = () => {
           <div className="d-flex align-items-center">
             <div>
                 <h1>Welcome The eShikhon Platform!</h1>
-                <p>
-                A learning system based on formalised teaching but with the help
-                of electronic resources is known as E-learning.
-                </p>
+                <p>A learning system based on formalised teaching but with the help of electronic resources is known as E-learning.</p>
                 <Button variant="contained">Learn More</Button>
             </div>
           </div>

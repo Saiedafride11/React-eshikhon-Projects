@@ -1,6 +1,6 @@
+import React from "react";
 import { List, ListItem, ListItemText } from "@mui/material";
 import { makeStyles } from "@material-ui/core";
-import React from "react";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -19,8 +19,7 @@ const BestService = () => {
   };
   return (
     <div className="category ">
-      <br />
-      <h2 style={{margin: '0 0 20px 20px'}}>Best Service</h2>
+      <h2 style={{margin: '15px 0 20px 20px'}}>Best Service</h2>
       <div className={classes.root} style={{marginLeft: '20px'}}>
         <List component="nav" aria-label="secondary mailbox folder">
           <ListItem

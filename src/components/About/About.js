@@ -5,8 +5,7 @@ import img from '../../images/teacher.jpg';
 const About = () => {
   return (
     <Container style={{ paddingTop: "100px" }}>
-      <br />
-      <h3>About Us</h3>
+      <h3 style={{marginTop: "15px"}}>About Us</h3>
       <p>
         eShikhon was founded by like-minded, young and motivated individuals
         with a vision to take freelancing and remote employment as a career path

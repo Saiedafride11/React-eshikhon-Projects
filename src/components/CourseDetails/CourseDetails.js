@@ -24,21 +24,23 @@ const CourseDetails = () => {
     const newCourse = courses?.filter((cs) => cs.id === serialId);
     setCart(newCourse);
   }, [courses]);
+  
   return (
     <div style={{ width: "70%", margin: "0 auto" }}>
-      {carts?.length === 0 ? (
-        <div style={{ padding: "150px 0 300px" }}>
-          <div className="d-flex justify-content-center align-items-center">
-            <div>
-              <h1 className="mx-4">404</h1>
-            </div>
-            <div>
-              <h5>Oops! You're lost.</h5>
-              <p>The page you are looking for was not found.</p>
+      {
+        carts?.length === 0 ? 
+          <div style={{ padding: "150px 0 300px" }}>
+            <div className="d-flex justify-content-center align-items-center">
+              <div>
+                <h1 className="mx-4">404</h1>
+              </div>
+              <div>
+                <h5>Oops! You're lost.</h5>
+                <p>The page you are looking for was not found.</p>
+              </div>
             </div>
           </div>
-        </div>
-      ) : (
+        : 
         <div style={{ paddingTop: "100px" }}>
           {carts?.map((cart) => (
             <Card
@@ -62,9 +64,7 @@ const CourseDetails = () => {
               <Box sx={{ display: "flex", flexDirection: "column" }}>
                 <CardContent sx={{ flex: "1 0 auto" }}>
                   <Typography component="div" variant="h5">
-                    <h4>
-                      <strong>{cart.title}</strong>
-                    </h4>
+                    <h4><strong>{cart.title}</strong></h4>
                   </Typography>
                   <Typography
                     variant="subtitle1"
@@ -72,43 +72,17 @@ const CourseDetails = () => {
                     component="div"
                   >
                     <div>
-                      <p className="mb-0">
-                        <strong>Mentor:</strong>{" "}
-                        <small>{cart.mentor_name}</small>
-                      </p>
-                      <p className="mb-0">
-                        <strong>Course Fee:</strong> <small>${cart.fee}</small>
-                      </p>
+                      <p className="mb-0"><strong>Mentor:</strong><small>{cart.mentor_name}</small></p>
+                      <p className="mb-0"><strong>Course Fee:</strong> <small>${cart.fee}</small></p>
                     </div>
                     <div style={{ display: "flex" }}>
                       <div style={{ width: "100px" }}>
-                        <p className="mb-0">
-                          <small>
-                            <strong>Classes: </strong>
-                            {cart.class}
-                          </small>
-                        </p>
-                        <p className="mb-0">
-                          <small>
-                            <strong>Houres: </strong>
-                            {cart.hour}
-                          </small>
-                        </p>
-                        <p>
-                          <small>
-                            <strong>Seats Lefts: </strong>
-                            {cart.seat}
-                          </small>
-                        </p>
+                        <p className="mb-0"><small><strong>Classes: </strong>{cart.class}</small></p>
+                        <p className="mb-0"><small><strong>Houres: </strong>{cart.hour}</small></p>
+                        <p><small><strong>Seats Lefts: </strong>{cart.seat}</small></p>
                       </div>
                       <div>
-                        <p>
-                          <Rating
-                            name="read-only"
-                            value={cart.ratting}
-                            readOnly
-                          />
-                        </p>
+                        <p><Rating name="read-only" value={cart.ratting} readOnly/></p>
                       </div>
                     </div>
                   </Typography>
@@ -138,7 +112,7 @@ const CourseDetails = () => {
             PageMaker including versions of Lorem Ipsum.
           </p>
         </div>
-      )}
+      }
     </div>
   );
 };

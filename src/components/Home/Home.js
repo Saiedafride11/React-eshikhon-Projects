@@ -12,35 +12,35 @@ const Home = () => {
   const [courses, setCourse] = useState();
   useEffect(() => {
     fetch("./course.JSON")
-      .then((res) => res.json())
-      .then((data) => setCourse(data));
+    .then((res) => res.json())
+    .then((data) => setCourse(data));
   }, []);
   return (
     <div>
+
       {/* Banner Section */}
       <section>
         <Banner></Banner>
       </section>
+
       <Container style={{ paddingTop: "20px" }}>
         {/* Services Section */}
         <section style={{ display: "flex" }}>
           <div style={{ width: "75%" }}>
             <div>
-              <br />
-              <h2>Total Course Available: {courses?.length}</h2>
-              {courses?.length === 0 ? (
-                <p>Loading...</p>
-              ) : (
-                courses
-                  ?.slice(0, 4)
-                  .map((course) => (
+              <h2 style={{marginTop: "15px"}}>Total Course Available: {courses?.length}</h2>
+              {
+                courses?.length === 0 ? 
+                <p style={{paddingTop:'30px', textAlign:'center', color: '#1976d2'}}>Loading...</p>
+                :
+                courses?.slice(0, 4).map((course) => (
                     <Course course={course} key={course.id}></Course>
                   ))
-              )}
+              }
             </div>
             <br />
             <div style={{ textAlign: "center" }}>
-              <Link to="/services" style={{ textDecoration: "none" }}>
+              <Link to="/services" className="text-decoration-none">
                 <Button variant="contained">View All Courses</Button>
               </Link>
             </div>
