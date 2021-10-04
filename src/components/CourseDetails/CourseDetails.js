@@ -7,7 +7,7 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import { Rating } from "@mui/material";
+import StarIcon from "@mui/icons-material/Star";
 
 const CourseDetails = () => {
   const { serialId } = useParams();
@@ -29,7 +29,7 @@ const CourseDetails = () => {
     <div style={{ width: "70%", margin: "0 auto" }}>
       {
         carts?.length === 0 ? 
-          <div style={{ padding: "150px 0 300px" }}>
+          <div style={{ padding: "150px 0 330px" }}>
             <div className="d-flex justify-content-center align-items-center">
               <div>
                 <h1 className="mx-4">404</h1>
@@ -75,14 +75,15 @@ const CourseDetails = () => {
                       <p className="mb-0"><strong>Mentor:</strong><small>{cart.mentor_name}</small></p>
                       <p className="mb-0"><strong>Course Fee:</strong> <small>${cart.fee}</small></p>
                     </div>
-                    <div style={{ display: "flex" }}>
+                    <div className="d-flex align-items-end">
                       <div style={{ width: "100px" }}>
                         <p className="mb-0"><small><strong>Classes: </strong>{cart.class}</small></p>
                         <p className="mb-0"><small><strong>Houres: </strong>{cart.hour}</small></p>
                         <p><small><strong>Seats Lefts: </strong>{cart.seat}</small></p>
                       </div>
-                      <div>
-                        <p><Rating name="read-only" value={cart.ratting} readOnly/></p>
+                      <div className="d-flex">
+                        <StarIcon style={{marginLeft: '10px', color:'#1976d2'}}></StarIcon>
+                        <p>{cart.ratting}</p>
                       </div>
                     </div>
                   </Typography>
