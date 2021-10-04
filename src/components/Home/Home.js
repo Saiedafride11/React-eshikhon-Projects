@@ -14,7 +14,7 @@ const Home = () => {
         .then(data => setCourse(data))
     }, [])
     return (
-       <Container className="mt-5">
+       <Container style={{paddingTop: '80px'}}>
            <div style={{display: 'flex'}}>
                 <div style={{width: '75%'}}>
                     <div>
@@ -24,7 +24,7 @@ const Home = () => {
                             courses?.length === 0 ?
                             <p>Loading...</p>
                             :
-                            courses?.slice(0, 3).map(course => <Course course={course} key={course.id}></Course>)
+                            courses?.slice(0, 4).map(course => <Course course={course} key={course.id}></Course>)
                         }
                     </div>
                     <br />

@@ -12,17 +12,23 @@ const Courses = () => {
       .then((data) => setCourse(data));
   }, []);
   return (
-    <Container>
-          <br />
-        <h2>Total Course: {courses?.length}</h2>
-      <div style={{ display: "grid", gridTemplateColumns:" repeat(2, 1fr)", gridColumnGap: '20px'}}>
-        {      
-              courses?.length === 0?
-              <p>Loading...</p>
-              :
-              courses?.map((course) => (
-                <AllCourse course={course}  key={course.id}></AllCourse>))
-          }
+    <Container style={{paddingTop:'80px'}}>
+      <br />
+      <h2>Total Course: {courses?.length}</h2>
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: " repeat(2, 1fr)",
+          gridColumnGap: "20px",
+        }}
+      >
+        {courses?.length === 0 ? (
+          <p>Loading...</p>
+        ) : (
+          courses?.map((course) => (
+            <AllCourse course={course} key={course.id}></AllCourse>
+          ))
+        )}
       </div>
     </Container>
   );

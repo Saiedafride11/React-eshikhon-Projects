@@ -28,42 +28,56 @@ const Services = () => {
             selected={selectedIndex === 2}
             onClick={(event) => handleListItemClick(event, 2)}
           >
-            <ListItemText primary="Vault Keys Giveway" />
+            <ListItemText primary="Offline Course" />
           </ListItem>
           <ListItem
             button
             selected={selectedIndex === 3}
             onClick={(event) => handleListItemClick(event, 3)}
           >
-            <ListItemText primary="Misc Guns Locations" />
+            <ListItemText primary="Online Course" />
           </ListItem>
           <ListItem
             button
             selected={selectedIndex === 4}
             onClick={(event) => handleListItemClick(event, 4)}
           >
-            <ListItemText primary="Looking for Players" />
+            <ListItemText primary="Pre-record video Course" />
           </ListItem>
           <ListItem
             button
             selected={selectedIndex === 5}
             onClick={(event) => handleListItemClick(event, 5)}
           >
-            <ListItemText primary="Stupid Bugs  Solves" />
+            <ListItemText primary="Best Teacher" />
           </ListItem>
           <ListItem
             button
             selected={selectedIndex === 6}
             onClick={(event) => handleListItemClick(event, 6)}
           >
-            <ListItemText primary="Video  Audio Drivers" />
+            <ListItemText primary="Best Guide" />
           </ListItem>
           <ListItem
             button
             selected={selectedIndex === 7}
             onClick={(event) => handleListItemClick(event, 7)}
           >
-            <ListItemText primary="2K Official Forums" />
+            <ListItemText primary="Freelancing Training" />
+          </ListItem>
+          <ListItem
+            button
+            selected={selectedIndex === 8}
+            onClick={(event) => handleListItemClick(event, 8)}
+          >
+            <ListItemText primary="Job and Internship Opportunity" />
+          </ListItem>
+          <ListItem
+            button
+            selected={selectedIndex === 9}
+            onClick={(event) => handleListItemClick(event, 9)}
+          >
+            <ListItemText primary="Nice and Cool Environment" />
           </ListItem>
         </List>
       </div>
