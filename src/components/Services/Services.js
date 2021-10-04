@@ -1,87 +1,36 @@
-import { List, ListItem, ListItemText } from "@mui/material";
-import { makeStyles } from "@material-ui/core";
 import React from "react";
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    width: "100%",
-    maxWidth: 360,
-    backgroundColor: theme.palette.background.paper,
-  },
-}));
+import { useEffect } from "react";
+import { useState } from "react";
+import { Container } from "@mui/material";
+import AllCourse from "../AllCourse/AllCourse";
 
 const Services = () => {
-  const classes = useStyles();
-  const [selectedIndex, setSelectedIndex] = React.useState(1);
-
-  const handleListItemClick = (event, index) => {
-    setSelectedIndex(index);
-  };
+  const [courses, setCourse] = useState();
+  useEffect(() => {
+    fetch("./course.JSON")
+      .then((res) => res.json())
+      .then((data) => setCourse(data));
+  }, []);
   return (
-    <div className="category ">
+    <Container style={{paddingTop:'80px'}}>
       <br />
-      <h2 style={{margin: '0 0 20px 20px'}}>Services</h2>
-      <div className={classes.root} style={{marginLeft: '20px'}}>
-        <List component="nav" aria-label="secondary mailbox folder">
-          <ListItem
-            button
-            selected={selectedIndex === 2}
-            onClick={(event) => handleListItemClick(event, 2)}
-          >
-            <ListItemText primary="Offline Course" />
-          </ListItem>
-          <ListItem
-            button
-            selected={selectedIndex === 3}
-            onClick={(event) => handleListItemClick(event, 3)}
-          >
-            <ListItemText primary="Online Course" />
-          </ListItem>
-          <ListItem
-            button
-            selected={selectedIndex === 4}
-            onClick={(event) => handleListItemClick(event, 4)}
-          >
-            <ListItemText primary="Pre-record video Course" />
-          </ListItem>
-          <ListItem
-            button
-            selected={selectedIndex === 5}
-            onClick={(event) => handleListItemClick(event, 5)}
-          >
-            <ListItemText primary="Best Teacher" />
-          </ListItem>
-          <ListItem
-            button
-            selected={selectedIndex === 6}
-            onClick={(event) => handleListItemClick(event, 6)}
-          >
-            <ListItemText primary="Best Guide" />
-          </ListItem>
-          <ListItem
-            button
-            selected={selectedIndex === 7}
-            onClick={(event) => handleListItemClick(event, 7)}
-          >
-            <ListItemText primary="Freelancing Training" />
-          </ListItem>
-          <ListItem
-            button
-            selected={selectedIndex === 8}
-            onClick={(event) => handleListItemClick(event, 8)}
-          >
-            <ListItemText primary="Job and Internship Opportunity" />
-          </ListItem>
-          <ListItem
-            button
-            selected={selectedIndex === 9}
-            onClick={(event) => handleListItemClick(event, 9)}
-          >
-            <ListItemText primary="Nice and Cool Environment" />
-          </ListItem>
-        </List>
+      <h2>Total Course: {courses?.length}</h2>
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: " repeat(2, 1fr)",
+          gridColumnGap: "20px",
+        }}
+      >
+        {courses?.length === 0 ? (
+          <p>Loading...</p>
+        ) : (
+          courses?.map((course) => (
+            <AllCourse course={course} key={course.id}></AllCourse>
+          ))
+        )}
       </div>
-    </div>
+    </Container>
   );
 };
 

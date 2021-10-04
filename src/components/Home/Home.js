@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import { useState } from "react";
 import Course from "../Course/Course";
-import Services from "../Services/Services";
+import BestService from "../BestService/BestService";
 import Client from "../Client/Client";
 import Banner from "../Banner/Banner";
 
@@ -27,7 +27,7 @@ const Home = () => {
           <div style={{ width: "75%" }}>
             <div>
               <br />
-              <h2>Total Course: {courses?.length}</h2>
+              <h2>Total Course Available: {courses?.length}</h2>
               {courses?.length === 0 ? (
                 <p>Loading...</p>
               ) : (
@@ -40,13 +40,13 @@ const Home = () => {
             </div>
             <br />
             <div style={{ textAlign: "center" }}>
-              <Link to="/courses" style={{ textDecoration: "none" }}>
+              <Link to="/services" style={{ textDecoration: "none" }}>
                 <Button variant="contained">View All Courses</Button>
               </Link>
             </div>
           </div>
           <div>
-            <Services></Services>
+            <BestService></BestService>
           </div>
         </section>
 

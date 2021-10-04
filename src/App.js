@@ -9,7 +9,7 @@ import Footer from './components/Footer/Footer';
 import Home from './components/Home/Home';
 import About from './components/About/About';
 import NotFound from './components/NotFound/NotFound';
-import Courses from './components/Courses/Courses';
+import Services from './components/Services/Services';
 import CourseDetails from './components/CourseDetails/CourseDetails';
 import Contact from './components/Contact/Contact';
 
@@ -25,8 +25,8 @@ function App() {
               <Route path="/home">
                   <Home></Home>
               </Route>
-              <Route path="/courses">
-                  <Courses></Courses>
+              <Route path="/services">
+                  <Services></Services>
               </Route>
               <Route path="/course/:serialId">
                   <CourseDetails></CourseDetails>

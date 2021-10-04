@@ -77,7 +77,7 @@ const Header = () => {
             <Box sx={{ flexGrow: 1 }} />
             <nav className="header-menu">
                 <Link className="menu text-decoration-none" to="/home"><Button variant="contained">Home</Button></Link>
-                <Link className="menu text-decoration-none" to="/courses"><Button variant="contained">Courses</Button></Link>
+                <Link className="menu text-decoration-none" to="/services"><Button variant="contained">Services</Button></Link>
                 <Link className="menu text-decoration-none" to="/contact"><Button variant="contained">Contact</Button></Link>
                 <Link className="menu text-decoration-none" to="/about"><Button variant="contained">About</Button></Link>
             </nav>
