@@ -26,6 +26,7 @@ const CourseDetails = () => {
     }, [courses])
     return (
         <div style={{width: '70%', margin: '0 auto'}}>
+            <div style={{paddingTop: '100px'}}>
             {
                 carts?.map(cart => <Card
                     sx={{
@@ -54,14 +55,17 @@ const CourseDetails = () => {
                           color="text.secondary"
                           component="div"
                         >
-                          <p><small><strong>Mentor: </strong>{cart.mentor_name}</small></p>
+                           <div>
+                            <p className="mb-0"><strong>Mentor:</strong> <small>{cart.mentor_name}</small></p>
+                            <p className="mb-0"><strong>Course Fee:</strong> <small>${cart.fee}</small></p>
+                          </div>
                           <div style={{display: 'flex'}}>
                             <div style={{width: '100px'}}>
-                                <p><small><strong>Classes: </strong>{cart.class}</small></p>
-                                <p><small><strong>Houres: </strong>{cart.hour}</small></p>
+                                <p className="mb-0"><small><strong>Classes: </strong>{cart.class}</small></p>
+                                <p className="mb-0"><small><strong>Houres: </strong>{cart.hour}</small></p>
+                                <p><small><strong>Seats Lefts: </strong>{cart.seat}</small></p>
                             </div>
                             <div>
-                                <p><small><strong>Seats Lefts: </strong>{cart.seat}</small></p>
                                 <p><Rating name="read-only" value={3.5} readOnly /></p>
                             </div>
                           </div>
@@ -87,6 +91,7 @@ const CourseDetails = () => {
                 <br />
                 <h5>Course Description:</h5>
                 <p>This Course is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            </div>
         </div>
     );
 };

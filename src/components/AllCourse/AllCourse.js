@@ -8,7 +8,7 @@ import { Button } from "@mui/material";
 import { useHistory } from "react-router-dom";
 
 const AllCourse = (props) => {
-  const { title, mentor_name, course_img, id } = props.course;
+  const { title, mentor_name, course_img, fee, id } = props.course;
   const history = useHistory();
 
   const handleCourseClick = () => {
@@ -27,14 +27,17 @@ const AllCourse = (props) => {
         <Box sx={{ display: "flex", flexDirection: "column" }}>
           <CardContent sx={{ flex: "1 0 auto" }}>
             <Typography component="div" variant="h5">
-              <h6><strong>{title}</strong></h6>
+              <h6 className="mb-0"><strong>{title}</strong></h6>
             </Typography>
             <Typography
               variant="subtitle1"
               color="text.secondary"
               component="div"
             >
-              <p><small><strong>Mentor: </strong>{mentor_name}</small></p>
+               <div>
+                <p className="mb-0"><strong>Mentor:</strong> <small>{mentor_name}</small></p>
+                <p className="mt-0"><strong>Course Fee:</strong> <small>${fee}</small></p>
+              </div>
             </Typography>
             <Button onClick={handleCourseClick} variant="contained">
               Course Details

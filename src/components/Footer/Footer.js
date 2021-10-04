@@ -4,7 +4,7 @@ import './Footer.css';
 const Footer = () => {
     return (
         <div className="footer">
-            <p>© 2021 SoftCoder. All rights reserved</p>
+            <p>© 2021 eShikhon. All rights reserved</p>
         </div>
     );
 };

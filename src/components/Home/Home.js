@@ -4,6 +4,7 @@ import {Link} from "react-router-dom";
 import { useEffect } from 'react';
 import { useState } from 'react';
 import Course from '../Course/Course';
+import Services from '../Services/Services';
 
 const Home = () => {
     const [courses, setCourse] = useState();
@@ -13,9 +14,9 @@ const Home = () => {
         .then(data => setCourse(data))
     }, [])
     return (
-       <Container>
+       <Container className="mt-5">
            <div style={{display: 'flex'}}>
-                <div style={{width: '65%'}}>
+                <div style={{width: '75%'}}>
                     <div>
                         <br />
                         <h2>Total Course: {courses?.length}</h2>
@@ -34,7 +35,7 @@ const Home = () => {
                     </div>
                 </div>
                 <div>
-                    <p>Services</p>
+                    <Services></Services>
                 </div>
             </div>
        </Container>

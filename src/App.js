@@ -11,6 +11,7 @@ import About from './components/About/About';
 import NotFound from './components/NotFound/NotFound';
 import Courses from './components/Courses/Courses';
 import CourseDetails from './components/CourseDetails/CourseDetails';
+import Contact from './components/Contact/Contact';
 
 function App() {
   return (
@@ -29,6 +30,9 @@ function App() {
               </Route>
               <Route path="/course/:serialId">
                   <CourseDetails></CourseDetails>
+              </Route>
+              <Route path="/contact">
+                  <Contact></Contact>
               </Route>
               <Route path="/about">
                   <About></About>
