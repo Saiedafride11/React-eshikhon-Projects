@@ -29,7 +29,7 @@ const CourseDetails = () => {
     <div style={{ width: "70%", margin: "0 auto" }}>
       {
         carts?.length === 0 ? 
-          <div style={{ padding: "150px 0 330px" }}>
+          <div style={{ padding: "150px 0 350px" }}>
             <div className="d-flex justify-content-center align-items-center">
               <div>
                 <h1 className="mx-4">404</h1>
